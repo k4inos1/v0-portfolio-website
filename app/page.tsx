@@ -6,6 +6,7 @@ import { Experience } from "@/components/portfolio/experience"
 import { Contact } from "@/components/portfolio/contact"
 import { Navigation } from "@/components/portfolio/navigation"
 import { FloatingElements } from "@/components/portfolio/floating-elements"
+import { Footer } from "@/components/portfolio/footer"
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
-      <Projects />
       <Experience />
+      <Projects />
       <Contact />
+      <Footer />
     </main>
   )
 }
