@@ -77,6 +77,28 @@ const projects: Project[] = [
     image: "/projects/landing.jpg",
     icon: <LayoutDashboard className="w-6 h-6" />,
     demoComponent: <LandingDemo />
+  },
+  {
+    id: 6,
+    title: "AI-Logistics Assistant",
+    description: "App móvil para gestión inteligente con Gemini Vision.",
+    longDescription: "Aplicación móvil innovadora para la gestión de inventarios inteligente y automatización. Emplea la API de Gemini Vision para escanear guías y facturas al instante, logrando reducir los tiempos operativos en un 70%.",
+    category: "ai",
+    technologies: ["React Native", "Firebase", "Gemini Pro", "Vision API"],
+    image: "/projects/ai-logistics.jpg",
+    icon: <Rocket className="w-6 h-6" />,
+    demoComponent: <AIChatDemo />
+  },
+  {
+    id: 7,
+    title: "Agency SaaS Platform",
+    description: "Plataforma SaaS en la nube con CI/CD automatizado.",
+    longDescription: "Solución completa para agencias que ofrece la comercialización de servicios de desarrollo y TI. Arquitectura escalable construida con Next.js y flujos de trabajo de CI/CD automatizados usando GitHub Actions.",
+    category: "saas",
+    technologies: ["Next.js", "GitHub Actions", "Tailwind CSS", "CI/CD", "TypeScript"],
+    image: "/projects/agency-saas.jpg",
+    icon: <LayoutDashboard className="w-6 h-6" />,
+    demoComponent: <SaaSDemo />
   }
 ]
 

@@ -48,8 +48,8 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Email</div>
-                    <a href="mailto:ricardo.sanhueza09@inacapmail.cl" className="text-foreground hover:text-primary transition-colors">
-                      ricardo.sanhueza09@inacapmail.cl
+                    <a href="mailto:ricardosanhuezaacuna@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                      ricardosanhuezaacuna@gmail.com
                     </a>
                   </div>
                 </div>
@@ -60,8 +60,8 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Telefono</div>
-                    <a href="tel:+56933174174" className="text-foreground hover:text-primary transition-colors">
-                      +56 9 3317 4174
+                    <a href="tel:+56953407990" className="text-foreground hover:text-primary transition-colors">
+                      +56 9 5340 7990
                     </a>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Ubicacion</div>
-                    <span className="text-foreground">Santiago, Chile</span>
+                    <span className="text-foreground">Concepción, Chile</span>
                   </div>
                 </div>
               </div>
