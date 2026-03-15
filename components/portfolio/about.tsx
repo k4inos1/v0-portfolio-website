@@ -31,25 +31,25 @@ export function About() {
               className="md:col-span-2 space-y-4"
             >
               <p className="text-muted-foreground leading-relaxed text-pretty">
-                Soy un desarrollador apasionado por crear experiencias digitales que combinan 
-                un diseno atractivo con ingenieria robusta. Mi enfoque se centra en la 
-                interseccion del diseno y el desarrollo, creando soluciones que no solo 
-                lucen increibles sino que estan meticulosamente construidas para el 
-                rendimiento y la usabilidad.
+                Soy Ricardo Sanhueza, Desarrollador Full-Stack, Analista de Datos y Especialista 
+                en Software Seguro. Cuento con una solida trayectoria en el diseno de soluciones 
+                eficientes y escalables, garantizando aplicaciones protegidas mediante buenas 
+                practicas de ciberseguridad en cada etapa del ciclo de vida del software.
               </p>
               <p className="text-muted-foreground leading-relaxed text-pretty">
-                A lo largo de mi carrera, he tenido la oportunidad de desarrollar software 
-                en diversos entornos: desde agencias de publicidad y grandes corporaciones 
-                hasta startups y estudios de productos digitales. Esta experiencia diversa 
-                me ha dado una perspectiva unica sobre como construir productos que realmente 
-                importan.
+                Mi formacion en INACAP incluye especializaciones en Desarrollo Full Stack, 
+                Infraestructura TI Segura, Desarrollo de Videojuegos y Software Seguro. 
+                He trabajado como Analista Programador en QUALITAT desarrollando con Flutter 
+                y Firebase, y realice mi practica profesional en Bee Fractal Spa.
               </p>
               <p className="text-muted-foreground leading-relaxed text-pretty">
-                Actualmente me especializo en <span className="text-foreground font-medium">React</span>,{" "}
-                <span className="text-foreground font-medium">Next.js</span>,{" "}
-                <span className="text-foreground font-medium">Node.js</span> y tecnologias de{" "}
-                <span className="text-foreground font-medium">Inteligencia Artificial</span>. 
-                Siempre estoy buscando nuevos desafios y oportunidades para aprender.
+                Domino tecnologias como <span className="text-foreground font-medium">React</span>,{" "}
+                <span className="text-foreground font-medium">Angular</span>,{" "}
+                <span className="text-foreground font-medium">Python</span>,{" "}
+                <span className="text-foreground font-medium">Java</span>,{" "}
+                <span className="text-foreground font-medium">SQL/NoSQL</span> y{" "}
+                <span className="text-foreground font-medium">Agentes de IA</span>. 
+                Mi objetivo es crecer profesionalmente aportando compromiso y rigor tecnico.
               </p>
             </motion.div>
 

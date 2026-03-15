@@ -31,9 +31,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground max-w-xl leading-relaxed text-pretty"
             >
-              Construyo experiencias digitales excepcionales. Especializado en 
-              crear soluciones web escalables, desde e-commerce hasta aplicaciones 
-              con inteligencia artificial.
+              Desarrollador Full-Stack, Analista de Datos y Especialista en Software Seguro.
+              Creo soluciones eficientes y escalables con enfoque en ciberseguridad,
+              metodologias agiles y experiencia de usuario.
             </motion.p>
 
             <motion.div
@@ -57,7 +57,7 @@ export function Hero() {
               className="flex items-center gap-4 pt-4"
             >
               <a
-                href="https://github.com"
+                href="https://github.com/ricardosanhueza"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -65,7 +65,7 @@ export function Hero() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ricardo-sanhueza/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -73,7 +73,7 @@ export function Hero() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:correo@ejemplo.com"
+                href="mailto:ricardo.sanhueza09@inacapmail.cl"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -130,7 +130,7 @@ export function Hero() {
                   >
                     <span className="text-foreground">name</span>
                     <span className="text-muted-foreground">:</span>{" "}
-                    <span className="text-primary">{'"Tu Nombre"'}</span>
+                    <span className="text-primary">{'"Ricardo Sanhueza"'}</span>
                     <span className="text-muted-foreground">,</span>
                   </motion.div>
                   <motion.div
@@ -189,14 +189,21 @@ export function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
               >
-                Node.js
+                Python
               </motion.div>
               <motion.div
                 className="absolute top-1/2 -right-8 px-4 py-2 bg-card border border-border rounded-full text-sm font-mono"
                 animate={{ x: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
               >
-                TypeScript
+                Angular
+              </motion.div>
+              <motion.div
+                className="absolute top-8 -left-6 px-4 py-2 bg-card border border-border rounded-full text-sm font-mono"
+                animate={{ x: [0, -10, 0] }}
+                transition={{ duration: 3.2, repeat: Infinity, delay: 0.8 }}
+              >
+                AI Agents
               </motion.div>
             </div>
           </motion.div>
