@@ -72,7 +72,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Ubicacion</div>
-                    <span className="text-foreground">Santiago, Chile</span>
+                    <span className="text-foreground">Concepcion, Chile</span>
                   </div>
                 </div>
               </div>
