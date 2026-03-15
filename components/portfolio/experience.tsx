@@ -95,7 +95,7 @@ export function Experience() {
         >
           <div className="flex items-center gap-4">
             <span className="text-primary font-mono text-sm">03.</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Experiencia</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-heading tracking-tight">Experiencia</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
 

@@ -18,7 +18,7 @@ export function Hero() {
               className="space-y-4"
             >
               <span className="text-primary font-mono text-sm">Hola, soy</span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-balance">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-balance font-heading tracking-tight">
                 Full Stack
                 <br />
                 <span className="text-primary">Developer</span>

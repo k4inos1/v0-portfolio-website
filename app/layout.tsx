@@ -1,16 +1,24 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Space_Grotesk, DM_Sans, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600', '700']
 });
 
-const jetbrains = JetBrains_Mono({ 
+const dmSans = DM_Sans({ 
   subsets: ["latin"],
-  variable: '--font-jetbrains'
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700']
+});
+
+const firaCode = Fira_Code({ 
+  subsets: ["latin"],
+  variable: '--font-fira-code',
+  weight: ['400', '500', '600']
 });
 
 export const metadata: Metadata = {
@@ -47,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${jetbrains.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${spaceGrotesk.variable} ${dmSans.variable} ${firaCode.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>

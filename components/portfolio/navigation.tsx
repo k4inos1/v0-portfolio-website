@@ -6,11 +6,11 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Sobre Mi", href: "#about" },
+  { label: "Habilidades", href: "#skills" },
+  { label: "Experiencia", href: "#experience" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Contacto", href: "#contact" },
 ]
 
 export function Navigation() {
@@ -39,12 +39,12 @@ export function Navigation() {
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <motion.a
             href="#"
-            className="text-xl font-bold text-foreground"
+            className="text-xl font-bold text-foreground font-heading"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="text-primary">{"<"}</span>
-            Dev
+            RS
             <span className="text-primary">{"/>"}</span>
           </motion.a>
 
