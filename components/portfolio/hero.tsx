@@ -57,7 +57,7 @@ export function Hero() {
               className="flex items-center gap-4 pt-4"
             >
               <a
-                href="https://github.com/ricardosanhueza"
+                href="https://github.com/k4inos1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
