@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, DM_Sans, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { VisitorTracker } from '@/components/analytics/VisitorTracker'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.variable} ${dmSans.variable} ${firaCode.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
+        <VisitorTracker />
       </body>
     </html>
   )
