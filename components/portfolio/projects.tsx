@@ -278,34 +278,103 @@ export function Projects() {
 }
 
 // Demo Components
+type CartItem = { id: string; name: string; price: number; emoji: string; qty: number }
+
 function EcommerceDemo() {
-  const [cart, setCart] = useState<string[]>([])
+  const [cart, setCart] = useState<CartItem[]>([])
+  const [checkedOut, setCheckedOut] = useState(false)
+  const [view, setView] = useState<"shop" | "cart">("shop")
+
   const products = [
-    { id: "1", name: "Laptop Pro", price: "$1,299" },
-    { id: "2", name: "Wireless Mouse", price: "$49" },
-    { id: "3", name: "USB-C Hub", price: "$79" }
+    { id: "1", name: "Laptop Pro", price: 1299, emoji: "💻", stock: 5 },
+    { id: "2", name: "Wireless Mouse", price: 49, emoji: "🖱️", stock: 12 },
+    { id: "3", name: "USB-C Hub", price: 79, emoji: "🔌", stock: 8 },
+    { id: "4", name: "Headphones", price: 199, emoji: "🎧", stock: 3 },
   ]
 
+  const addToCart = (p: typeof products[0]) => {
+    setCart(prev => {
+      const existing = prev.find(i => i.id === p.id)
+      if (existing) return prev.map(i => i.id === p.id ? { ...i, qty: i.qty + 1 } : i)
+      return [...prev, { id: p.id, name: p.name, price: p.price, emoji: p.emoji, qty: 1 }]
+    })
+  }
+
+  const removeFromCart = (id: string) => setCart(prev => prev.filter(i => i.id !== id))
+
+  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0)
+  const cartCount = cart.reduce((sum, i) => sum + i.qty, 0)
+
+  if (checkedOut) {
+    return (
+      <div className="flex flex-col items-center justify-center py-6 space-y-2 text-center">
+        <div className="text-4xl">✅</div>
+        <div className="text-sm font-semibold text-foreground">¡Orden Confirmada!</div>
+        <div className="text-xs text-muted-foreground">Pago procesado con Stripe · ${total.toLocaleString()}</div>
+        <button onClick={() => { setCheckedOut(false); setCart([]); setView("shop") }}
+          className="mt-2 px-3 py-1.5 bg-secondary text-secondary-foreground rounded text-xs">
+          Nueva compra
+        </button>
+      </div>
+    )
+  }
+
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-3 gap-3">
-        {products.map((product) => (
-          <div key={product.id} className="bg-card p-3 rounded-lg border border-border text-center">
-            <div className="w-12 h-12 bg-secondary rounded mx-auto mb-2" />
-            <div className="text-xs font-medium text-foreground">{product.name}</div>
-            <div className="text-xs text-primary">{product.price}</div>
-            <button 
-              onClick={() => setCart([...cart, product.id])}
-              className="mt-2 px-2 py-1 bg-primary text-primary-foreground rounded text-xs"
-            >
-              Add
-            </button>
-          </div>
-        ))}
+    <div className="space-y-3">
+      {/* Nav bar */}
+      <div className="flex items-center justify-between text-xs font-mono bg-card border border-border rounded-lg px-3 py-2">
+        <span className="font-semibold text-foreground">🛍️ TechStore</span>
+        <div className="flex gap-3">
+          <button onClick={() => setView("shop")} className={`transition-colors ${view === "shop" ? "text-primary" : "text-muted-foreground"}`}>Tienda</button>
+          <button onClick={() => setView("cart")} className={`relative transition-colors ${view === "cart" ? "text-primary" : "text-muted-foreground"}`}>
+            Carrito
+            {cartCount > 0 && <span className="absolute -top-1.5 -right-2.5 bg-primary text-primary-foreground rounded-full w-4 h-4 flex items-center justify-center text-[9px]">{cartCount}</span>}
+          </button>
+        </div>
       </div>
-      <div className="text-xs text-muted-foreground text-center">
-        Carrito: {cart.length} items
-      </div>
+
+      {view === "shop" ? (
+        <div className="grid grid-cols-2 gap-2">
+          {products.map(p => (
+            <div key={p.id} className="bg-card border border-border rounded-lg p-3 flex flex-col gap-1">
+              <div className="text-2xl text-center">{p.emoji}</div>
+              <div className="text-xs font-medium text-foreground text-center">{p.name}</div>
+              <div className="text-xs text-primary text-center font-mono">${p.price.toLocaleString()}</div>
+              <div className="text-[10px] text-muted-foreground text-center">Stock: {p.stock}</div>
+              <button onClick={() => addToCart(p)}
+                className="mt-1 py-1 bg-primary text-primary-foreground rounded text-xs hover:opacity-90 transition-opacity">
+                + Agregar
+              </button>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {cart.length === 0 ? (
+            <div className="text-center text-xs text-muted-foreground py-4">El carrito está vacío</div>
+          ) : (
+            <>
+              {cart.map(item => (
+                <div key={item.id} className="flex items-center justify-between bg-card border border-border rounded-lg px-3 py-2 text-xs">
+                  <span>{item.emoji} {item.name} ×{item.qty}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary font-mono">${(item.price * item.qty).toLocaleString()}</span>
+                    <button onClick={() => removeFromCart(item.id)} className="text-muted-foreground hover:text-destructive transition-colors">✕</button>
+                  </div>
+                </div>
+              ))}
+              <div className="flex items-center justify-between text-xs font-semibold border-t border-border pt-2 mt-1">
+                <span>Total</span>
+                <span className="text-primary font-mono">${total.toLocaleString()}</span>
+              </div>
+              <button onClick={() => setCheckedOut(true)}
+                className="w-full py-2 bg-primary text-primary-foreground rounded-lg text-xs font-semibold hover:opacity-90 transition-opacity">
+                💳 Pagar con Stripe
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   )
 }
