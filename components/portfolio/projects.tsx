@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { ExternalLink, Github, X, ShoppingCart, MessageSquare, LayoutDashboard, Rocket, BarChart3 } from "lucide-react"
+import { ExternalLink, Github, X, ShoppingCart, MessageSquare, LayoutDashboard, Rocket, BarChart3, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 type ProjectCategory = "all" | "ecommerce" | "landing" | "ai" | "saas" | "dashboard"
@@ -20,6 +20,7 @@ interface Project {
   github?: string
   live?: string
   icon: React.ReactNode
+  featured?: boolean
 }
 
 const projects: Project[] = [
@@ -32,7 +33,10 @@ const projects: Project[] = [
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
     image: "/projects/ecommerce.jpg",
     icon: <ShoppingCart className="w-6 h-6" />,
-    demoComponent: <EcommerceDemo />
+    demoComponent: <EcommerceDemo />,
+    live: "/ecommerce",
+    github: "https://github.com/ricardosanhueza",
+    featured: true,
   },
   {
     id: 2,
@@ -167,7 +171,11 @@ export function Projects() {
                   onClick={() => setSelectedProject(project)}
                   className="group cursor-pointer"
                 >
-                  <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                  <div className={`bg-card border rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 ${
+                      project.featured
+                        ? "border-primary/40 hover:border-primary shadow-md shadow-primary/10"
+                        : "border-border hover:border-primary/50"
+                    }`}>
                     {/* Project Preview */}
                     <div className="aspect-video bg-secondary/50 relative overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -176,6 +184,17 @@ export function Projects() {
                         </div>
                       </div>
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
+                      {project.featured && (
+                        <div className="absolute top-3 left-3 flex items-center gap-1 px-2.5 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full shadow-lg">
+                          <Star className="w-3 h-3 fill-current" />
+                          Destacado
+                        </div>
+                      )}
+                      {project.live && (
+                        <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-green-400 shadow shadow-green-400/50">
+                          <div className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+                        </div>
+                      )}
                     </div>
                     
                     <div className="p-6 space-y-4">
@@ -259,14 +278,32 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm">
-                    <Github className="w-4 h-4 mr-2" />
-                    Codigo
-                  </Button>
-                  <Button size="sm">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Ver Demo
-                  </Button>
+                  {selectedProject.github ? (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        Codigo
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button variant="outline" size="sm" disabled>
+                      <Github className="w-4 h-4 mr-2" />
+                      Codigo
+                    </Button>
+                  )}
+                  {selectedProject.live ? (
+                    <Button size="sm" asChild>
+                      <a href={selectedProject.live} target={selectedProject.live.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Ver Demo
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button size="sm" disabled>
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Ver Demo
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>

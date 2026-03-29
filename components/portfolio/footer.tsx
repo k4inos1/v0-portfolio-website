@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { ShoppingCart } from "lucide-react"
 
 export function Footer() {
   return (
@@ -21,6 +22,13 @@ export function Footer() {
             <a href="#skills" className="hover:text-foreground transition-colors">Skills</a>
             <a href="#projects" className="hover:text-foreground transition-colors">Proyectos</a>
             <a href="#contact" className="hover:text-foreground transition-colors">Contacto</a>
+            <a
+              href="/ecommerce"
+              className="hover:text-primary transition-colors flex items-center gap-1.5 font-medium"
+            >
+              <ShoppingCart className="w-3.5 h-3.5" />
+              TechStore
+            </a>
           </div>
           
           <div className="text-sm text-muted-foreground">

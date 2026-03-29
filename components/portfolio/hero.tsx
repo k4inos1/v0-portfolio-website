@@ -1,10 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react"
+
+const roles = ["Full Stack Developer", "Data Analyst", "AI Engineer", "Secure Software Dev"]
 
 export function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0)
+  const [displayed, setDisplayed] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = roles[roleIndex]
+    let timeout: ReturnType<typeof setTimeout>
+
+    if (!isDeleting && displayed.length < current.length) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
+    } else if (!isDeleting && displayed.length === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 2000)
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40)
+    } else if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false)
+      setRoleIndex((i) => (i + 1) % roles.length)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayed, isDeleting, roleIndex])
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="container mx-auto">
@@ -17,12 +41,31 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <span className="text-primary font-mono text-sm">Hola, soy</span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-balance font-heading tracking-tight">
-                Full Stack
+              {/* Availability badge */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                Disponible para nuevos proyectos
+              </motion.div>
+
+              <span className="block text-primary font-mono text-sm">Hola, soy</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance font-heading tracking-tight">
+                Ricardo
                 <br />
-                <span className="text-primary">Developer</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-300 to-primary bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]">
+                  Sanhueza
+                </span>
               </h1>
+
+              {/* Typewriter role */}
+              <div className="h-8 flex items-center gap-1 text-xl md:text-2xl font-heading text-muted-foreground">
+                <span className="text-foreground font-semibold">{displayed}</span>
+                <span className="w-0.5 h-6 bg-primary animate-pulse rounded-full" />
+              </div>
             </motion.div>
 
             <motion.p
@@ -42,7 +85,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="shadow-lg shadow-primary/20">
                 <a href="#projects">Ver Proyectos</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -60,7 +103,7 @@ export function Hero() {
                 href="https://github.com/ricardosanhueza"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -68,13 +111,13 @@ export function Hero() {
                 href="https://www.linkedin.com/in/ricardo-sanhueza/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:ricardosanhuezaacuna@gmail.com"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
                 <Mail className="w-5 h-5" />
               </a>
