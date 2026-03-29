@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -16,23 +16,43 @@ const navItems = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
+
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+
+      // Determine active section
+      const sections = navItems.map((item) => item.href.replace("#", ""))
+      const current = sections.find((id) => {
+        const el = document.getElementById(id)
+        if (!el) return false
+        const rect = el.getBoundingClientRect()
+        return rect.top <= 120 && rect.bottom >= 120
+      })
+      if (current) setActiveSection(current)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <>
+      {/* Scroll progress bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-0.5 bg-primary z-[60] origin-left"
+        style={{ scaleX }}
+      />
+
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-lg border-b border-border"
+            ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -50,22 +70,32 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <motion.li
-                key={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <a
-                  href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors relative group"
+            {navItems.map((item, index) => {
+              const sectionId = item.href.replace("#", "")
+              const isActive = activeSection === sectionId
+              return (
+                <motion.li
+                  key={item.href}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-                </a>
-              </motion.li>
-            ))}
+                  <a
+                    href={item.href}
+                    className={`relative transition-colors group ${
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </a>
+                </motion.li>
+              )
+            })}
           </ul>
 
           <div className="hidden md:block">
