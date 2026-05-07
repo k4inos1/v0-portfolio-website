@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { ExternalLink, Github, X, ShoppingCart, MessageSquare, LayoutDashboard, Rocket, BarChart3, Star } from "lucide-react"
+import { ExternalLink, Github, X, ShoppingCart, MessageSquare, Rocket, BarChart3, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 type ProjectCategory = "all" | "ecommerce" | "landing" | "ai" | "saas" | "dashboard"
