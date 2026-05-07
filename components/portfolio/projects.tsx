@@ -26,83 +26,55 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Tienda online completa con carrito, pagos y gestion de inventario.",
-    longDescription: "Plataforma de comercio electronico desarrollada con React y Node.js. Incluye sistema de autenticacion, carrito de compras, pasarela de pagos con Stripe, panel de administracion y gestion de inventario en tiempo real.",
-    category: "ecommerce",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-    image: "/projects/ecommerce.jpg",
-    icon: <ShoppingCart className="w-6 h-6" />,
-    demoComponent: <EcommerceDemo />,
-    live: "/ecommerce",
-    github: "https://github.com/ricardosanhueza",
+    title: "AI Suite Platform",
+    description: "Plataforma unificada de Inteligencia Artificial con ChatBot y generador de recetas.",
+    longDescription: "Ecosistema moderno que unifica asistentes virtuales conversacionales, generación de recetas gastronómicas y procesamiento de lenguaje natural integrado de forma centralizada.",
+    category: "ai",
+    technologies: ["Next.js", "OpenAI API", "Tailwind CSS", "TypeScript", "React"],
+    image: "/projects/ai-chat.jpg",
+    icon: <MessageSquare className="w-6 h-6" />,
+    demoComponent: <AIChatDemo />,
+    github: "https://github.com/k4inos1/ai-suite-platform",
     featured: true,
   },
   {
     id: 2,
-    title: "AI Chat Assistant",
-    description: "Asistente virtual con procesamiento de lenguaje natural.",
-    longDescription: "Chatbot inteligente construido con Python y modelos de lenguaje. Capaz de responder preguntas, realizar tareas y aprender de las interacciones del usuario mediante fine-tuning.",
-    category: "ai",
-    technologies: ["Python", "OpenAI", "FastAPI", "React", "WebSockets"],
-    image: "/projects/ai-chat.jpg",
-    icon: <MessageSquare className="w-6 h-6" />,
-    demoComponent: <AIChatDemo />
+    title: "E-Commerce Delivery App",
+    description: "Portal integrado de compras y rastreo logístico de entregas.",
+    longDescription: "Plataforma construida con Next.js que combina una tienda virtual (TechStore) con un módulo logístico en tiempo real de seguimiento de envíos usando Firebase y Turbopack.",
+    category: "ecommerce",
+    technologies: ["Next.js", "Firebase", "Stripe", "Tailwind CSS", "React"],
+    image: "/projects/ecommerce.jpg",
+    icon: <ShoppingCart className="w-6 h-6" />,
+    demoComponent: <EcommerceDemo />,
+    github: "https://github.com/k4inos1/ecommerce-delivery-app",
+    featured: true,
   },
   {
     id: 3,
-    title: "Analytics Dashboard",
-    description: "Panel de control con visualizaciones de datos en tiempo real.",
-    longDescription: "Dashboard interactivo para analisis de metricas empresariales. Graficos dinamicos, reportes automatizados, exportacion de datos y alertas configurables.",
-    category: "dashboard",
-    technologies: ["Angular", "D3.js", "PostgreSQL", "Python", "Docker"],
+    title: "Core API Services",
+    description: "Backend centralizado en Python/Django para ecosistema empresarial.",
+    longDescription: "Backend altamente escalable que consolida la lógica de logística (entregables), analítica predictiva de IA (Pandas/Numpy) y gestión de inventarios en un solo sistema REST.",
+    category: "saas",
+    technologies: ["Django", "Python", "REST Framework", "SQLite/PostgreSQL", "Pandas"],
     image: "/projects/dashboard.jpg",
-    icon: <BarChart3 className="w-6 h-6" />,
-    demoComponent: <DashboardDemo />
+    icon: <Rocket className="w-6 h-6" />,
+    demoComponent: <CoreApiDemo />,
+    github: "https://github.com/k4inos1/core-api-services",
+    featured: true,
   },
   {
     id: 4,
-    title: "SaaS Project Manager",
-    description: "Herramienta de gestion de proyectos con colaboracion en tiempo real.",
-    longDescription: "Aplicacion SaaS para equipos de desarrollo. Incluye tableros Kanban, seguimiento de tiempo, integracion con Git, notificaciones en tiempo real y reportes de productividad.",
-    category: "saas",
-    technologies: ["React", "Firebase", "Node.js", "Socket.io", "Tailwind"],
+    title: "Business Management Dashboard",
+    description: "Panel administrativo interactivo en React y Material UI.",
+    longDescription: "Sistema administrativo migrado de Angular a React (Vite). Incluye métricas de negocio, salud del servidor en tiempo real y gestión completa de usuarios y roles.",
+    category: "dashboard",
+    technologies: ["React", "Vite", "Material UI", "TypeScript", "React Router"],
     image: "/projects/saas.jpg",
-    icon: <Rocket className="w-6 h-6" />,
-    demoComponent: <SaaSDemo />
-  },
-  {
-    id: 5,
-    title: "Startup Landing Page",
-    description: "Landing page moderna y animada para producto tecnologico.",
-    longDescription: "Pagina de aterrizaje optimizada para conversion con animaciones fluidas, formularios de captura, integracion con CRM y A/B testing incorporado.",
-    category: "landing",
-    technologies: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
-    image: "/projects/landing.jpg",
-    icon: <LayoutDashboard className="w-6 h-6" />,
-    demoComponent: <LandingDemo />
-  },
-  {
-    id: 6,
-    title: "AI-Logistics Assistant",
-    description: "App móvil para gestión inteligente con Gemini Vision.",
-    longDescription: "Aplicación móvil innovadora para la gestión de inventarios inteligente y automatización. Emplea la API de Gemini Vision para escanear guías y facturas al instante, logrando reducir los tiempos operativos en un 70%.",
-    category: "ai",
-    technologies: ["React Native", "Firebase", "Gemini Pro", "Vision API"],
-    image: "/projects/ai-logistics.jpg",
-    icon: <Rocket className="w-6 h-6" />,
-    demoComponent: <AIChatDemo />
-  },
-  {
-    id: 7,
-    title: "Agency SaaS Platform",
-    description: "Plataforma SaaS en la nube con CI/CD automatizado.",
-    longDescription: "Solución completa para agencias que ofrece la comercialización de servicios de desarrollo y TI. Arquitectura escalable construida con Next.js y flujos de trabajo de CI/CD automatizados usando GitHub Actions.",
-    category: "saas",
-    technologies: ["Next.js", "GitHub Actions", "Tailwind CSS", "CI/CD", "TypeScript"],
-    image: "/projects/agency-saas.jpg",
-    icon: <LayoutDashboard className="w-6 h-6" />,
-    demoComponent: <SaaSDemo />
+    icon: <BarChart3 className="w-6 h-6" />,
+    demoComponent: <DashboardDemo />,
+    github: "https://github.com/k4inos1/business-management-dashboard",
+    featured: true,
   }
 ]
 
@@ -492,47 +464,29 @@ function DashboardDemo() {
   )
 }
 
-function SaaSDemo() {
-  const [tasks, setTasks] = useState([
-    { id: 1, title: "Disenar UI", status: "done" },
-    { id: 2, title: "Implementar API", status: "progress" },
-    { id: 3, title: "Testing", status: "todo" }
-  ])
-
+function CoreApiDemo() {
   return (
-    <div className="space-y-3">
-      <div className="grid grid-cols-3 gap-2 text-xs">
-        {["todo", "progress", "done"].map((status) => (
-          <div key={status} className="bg-card p-2 rounded-lg border border-border">
-            <div className="font-medium text-foreground mb-2 capitalize">{status}</div>
-            {tasks.filter(t => t.status === status).map((task) => (
-              <div key={task.id} className="bg-secondary p-2 rounded text-muted-foreground mb-1">
-                {task.title}
-              </div>
-            ))}
-          </div>
-        ))}
+    <div className="space-y-3 font-mono text-xs">
+      <div className="bg-card p-3 rounded-lg border border-border">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-primary font-bold">GET /api/v1/health/</span>
+          <span className="text-green-500">200 OK</span>
+        </div>
+        <div className="text-muted-foreground bg-secondary/50 p-2 rounded">
+          &#123;<br/>
+          &nbsp;&nbsp;"status": "online",<br/>
+          &nbsp;&nbsp;"apps": ["entregables", "api", "k_ia"],<br/>
+          &nbsp;&nbsp;"db_connected": true<br/>
+          &#125;
+        </div>
       </div>
-    </div>
-  )
-}
-
-function LandingDemo() {
-  return (
-    <div className="space-y-3">
-      <div className="bg-card p-4 rounded-lg border border-border text-center">
-        <div className="text-lg font-bold text-foreground mb-1">Tu Producto</div>
-        <div className="text-xs text-muted-foreground mb-3">La solucion perfecta para tu negocio</div>
-        <button className="px-4 py-2 bg-primary text-primary-foreground rounded text-xs">
-          Comenzar Gratis
-        </button>
-      </div>
-      <div className="grid grid-cols-3 gap-2">
-        {["Rapido", "Seguro", "Escalable"].map((feature) => (
-          <div key={feature} className="bg-secondary p-2 rounded text-center text-xs text-muted-foreground">
-            {feature}
-          </div>
-        ))}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="bg-secondary p-2 rounded text-center text-muted-foreground border border-border/50">
+          Neural Net: Ready
+        </div>
+        <div className="bg-secondary p-2 rounded text-center text-muted-foreground border border-border/50">
+          JWT Auth: Active
+        </div>
       </div>
     </div>
   )
