@@ -5,16 +5,18 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 
 const skills = [
+  { name: "Software Seguro", level: "Experto", percentage: 95 },
+  { name: "Ciberseguridad", level: "Avanzado", percentage: 90 },
+  { name: "Java", level: "Avanzado", percentage: 90 },
   { name: "React", level: "Experto", percentage: 95 },
-  { name: "Angular", level: "Experto", percentage: 95 },
   { name: "Python", level: "Experto", percentage: 95 },
   { name: "SQL", level: "Experto", percentage: 95 },
+  { name: "Angular", level: "Experto", percentage: 95 },
   { name: "Agentes de IA", level: "Experto", percentage: 95 },
-  { name: "HTML/CSS", level: "Experto", percentage: 95 },
-  { name: "Java", level: "Avanzado", percentage: 85 },
-  { name: "PHP", level: "Avanzado", percentage: 85 },
-  { name: "NoSQL", level: "Avanzado", percentage: 85 },
   { name: "APIs REST", level: "Avanzado", percentage: 85 },
+  { name: "NoSQL", level: "Avanzado", percentage: 85 },
+  { name: "HTML/CSS", level: "Experto", percentage: 95 },
+  { name: "PHP", level: "Avanzado", percentage: 85 },
   { name: "C++", level: "Experto", percentage: 95 },
   { name: "Kotlin", level: "Intermedio", percentage: 65 },
   { name: "Unity", level: "Intermedio", percentage: 65 },
@@ -23,17 +25,22 @@ const skills = [
 
 const categories = [
   {
+    title: "Seguridad",
+    skills: ["Software Seguro", "Ciberseguridad", "OWASP"],
+    icon: "🛡️"
+  },
+  {
     title: "Frontend",
     skills: ["React", "Angular", "HTML/CSS", "Flutter"],
     icon: "🎨"
   },
   {
     title: "Backend",
-    skills: ["Python", "Java", "PHP", "C++", "Kotlin"],
+    skills: ["Java", "Python", "PHP", "C++", "Kotlin"],
     icon: "⚙️"
   },
   {
-    title: "Databases",
+    title: "Datos y APIs",
     skills: ["SQL", "NoSQL", "APIs REST"],
     icon: "🗄️"
   },
