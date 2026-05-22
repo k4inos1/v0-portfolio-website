@@ -104,6 +104,7 @@ export function Hero() {
                 href="https://github.com/ricardosanhueza"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -112,6 +113,7 @@ export function Hero() {
                 href="https://www.linkedin.com/in/ricardo-sanhueza/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
                 <LinkedinIcon className="w-5 h-5" />
