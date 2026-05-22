@@ -255,13 +255,13 @@ export function Projects() {
                     <Button variant="outline" size="sm" asChild>
                       <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
                         <GithubIcon className="w-4 h-4 mr-2" />
-                        Codigo
+                        Código
                       </a>
                     </Button>
                   ) : (
                     <Button variant="outline" size="sm" disabled>
                       <GithubIcon className="w-4 h-4 mr-2" />
-                      Codigo
+                      Código
                     </Button>
                   )}
                   {selectedProject.live ? (
