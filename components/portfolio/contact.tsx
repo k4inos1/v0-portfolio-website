@@ -3,8 +3,9 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Check } from "lucide-react"
+import { Mail, MapPin, Phone, Send, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons"
 
 export function Contact() {
   const ref = useRef(null)
@@ -84,7 +85,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-all"
                 >
-                  <Github className="w-5 h-5" />
+                  <GithubIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ricardo-sanhueza/"
@@ -92,7 +93,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-all"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <LinkedinIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>

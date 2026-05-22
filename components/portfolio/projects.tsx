@@ -3,8 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { ExternalLink, Github, X, ShoppingCart, MessageSquare, Rocket, BarChart3, Star } from "lucide-react"
+import { ExternalLink, X, ShoppingCart, MessageSquare, Rocket, BarChart3, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { GithubIcon } from "@/components/ui/social-icons"
 
 type ProjectCategory = "all" | "ecommerce" | "landing" | "ai" | "saas" | "dashboard"
 
@@ -253,13 +254,13 @@ export function Projects() {
                   {selectedProject.github ? (
                     <Button variant="outline" size="sm" asChild>
                       <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
+                        <GithubIcon className="w-4 h-4 mr-2" />
                         Codigo
                       </a>
                     </Button>
                   ) : (
                     <Button variant="outline" size="sm" disabled>
-                      <Github className="w-4 h-4 mr-2" />
+                      <GithubIcon className="w-4 h-4 mr-2" />
                       Codigo
                     </Button>
                   )}

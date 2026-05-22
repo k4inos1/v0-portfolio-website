@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react"
+import { ArrowDown, Mail, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons"
 import { useState, useEffect } from "react"
 
 const roles = ["Full Stack Developer", "Data Analyst", "AI Engineer", "Secure Software Dev"]
@@ -105,7 +106,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
-                <Github className="w-5 h-5" />
+                <GithubIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/ricardo-sanhueza/"
@@ -113,7 +114,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
               >
-                <Linkedin className="w-5 h-5" />
+                <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:ricardosanhuezaacuna@gmail.com"
