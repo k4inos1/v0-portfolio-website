@@ -79,7 +79,7 @@ export function Contact() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/ricardosanhueza"
+                  href="https://github.com/k4inos1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-all"
