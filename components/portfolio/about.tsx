@@ -19,7 +19,7 @@ export function About() {
         >
           <div className="flex items-center gap-4">
             <span className="text-primary font-mono text-sm">01.</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-heading tracking-tight">Sobre Mi</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-heading tracking-tight">Sobre Mí</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
 
@@ -30,27 +30,20 @@ export function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:col-span-2 space-y-4"
             >
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                Soy Ricardo Sanhueza, Desarrollador Full-Stack, Analista de Datos y Especialista 
-                en Software Seguro. Cuento con una solida trayectoria en el diseno de soluciones 
-                eficientes y escalables, garantizando aplicaciones protegidas mediante buenas 
-                practicas de ciberseguridad en cada etapa del ciclo de vida del software.
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                Mi formacion en INACAP incluye especializaciones en Desarrollo Full Stack, 
-                Infraestructura TI Segura, Desarrollo de Videojuegos y Software Seguro. 
-                He trabajado como Analista Programador en QUALITAT desarrollando con Flutter 
-                y Firebase, y realice mi practica profesional en Bee Fractal Spa.
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                Domino tecnologias como <span className="text-foreground font-medium">React</span>,{" "}
-                <span className="text-foreground font-medium">Angular</span>,{" "}
-                <span className="text-foreground font-medium">Python</span>,{" "}
-                <span className="text-foreground font-medium">Java</span>,{" "}
-                <span className="text-foreground font-medium">SQL/NoSQL</span> y{" "}
-                <span className="text-foreground font-medium">Agentes de IA</span>. 
-                Mi objetivo es crecer profesionalmente aportando compromiso y rigor tecnico.
-              </p>
+               <p className="text-muted-foreground leading-relaxed text-pretty">
+                 Soy Ricardo Sanhueza, desarrollador Full-Stack y especialista en Software Seguro.
+                 Diseño soluciones escalables y reduzco riesgos desde la arquitectura hasta la entrega.
+               </p>
+               <p className="text-muted-foreground leading-relaxed text-pretty">
+                 He trabajado en QUALITAT y Bee Fractal Spa, y me formé en INACAP con foco en
+                 Desarrollo Full Stack, Infraestructura TI Segura y Software Seguro. Trabajo con{" "}
+                 <span className="text-foreground font-medium">React</span>,{" "}
+                 <span className="text-foreground font-medium">Angular</span>,{" "}
+                 <span className="text-foreground font-medium">Python</span>,{" "}
+                 <span className="text-foreground font-medium">Java</span>,{" "}
+                 <span className="text-foreground font-medium">SQL/NoSQL</span> y{" "}
+                 <span className="text-foreground font-medium">Agentes de IA con LangChain</span>.
+               </p>
             </motion.div>
 
             <motion.div

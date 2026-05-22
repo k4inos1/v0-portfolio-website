@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button"
 import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons"
 import { useState, useEffect } from "react"
 
-const roles = ["Full Stack Developer", "Data Analyst", "AI Engineer", "Secure Software Dev"]
+const roles = [
+  "Aseguro software desde el diseño",
+  "Lidero soluciones full-stack seguras",
+  "Optimizo productos con impacto real",
+]
 
 export function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -75,9 +79,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground max-w-xl leading-relaxed text-pretty"
             >
-              Desarrollador Full-Stack, Analista de Datos y Especialista en Software Seguro.
-              Creo soluciones eficientes y escalables con enfoque en ciberseguridad,
-              metodologias agiles y experiencia de usuario.
+                Desarrollador Full-Stack y especialista en Software Seguro.
+                Diseño plataformas escalables con foco en ciberseguridad, calidad técnica
+                y resultados medibles para negocio.
             </motion.p>
 
             <motion.div
@@ -101,7 +105,7 @@ export function Hero() {
               className="flex items-center gap-4 pt-4"
             >
               <a
-                href="https://github.com/ricardosanhueza"
+                href="https://github.com/k4inos1"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
@@ -185,9 +189,9 @@ export function Hero() {
                     transition={{ delay: 1.4 }}
                     className="pl-4"
                   >
-                    <span className="text-foreground">role</span>
+                     <span className="text-foreground">role</span>
                     <span className="text-muted-foreground">:</span>{" "}
-                    <span className="text-primary">{'"Full Stack"'}</span>
+                    <span className="text-primary">{'"Software Seguro"'}</span>
                     <span className="text-muted-foreground">,</span>
                   </motion.div>
                   <motion.div
@@ -196,15 +200,26 @@ export function Hero() {
                     transition={{ delay: 1.6 }}
                     className="pl-4"
                   >
-                    <span className="text-foreground">passion</span>
+                    <span className="text-foreground">securityFirst</span>
                     <span className="text-muted-foreground">:</span>{" "}
-                    <span className="text-primary">{'"Building"'}</span>
+                    <span className="text-chart-2">true</span>
                     <span className="text-muted-foreground">,</span>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.8 }}
+                    className="pl-4"
+                  >
+                    <span className="text-foreground">focus</span>
+                    <span className="text-muted-foreground">:</span>{" "}
+                    <span className="text-primary">{'"Resultados medibles"'}</span>
+                    <span className="text-muted-foreground">,</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2 }}
                     className="pl-4"
                   >
                     <span className="text-foreground">available</span>
@@ -214,7 +229,7 @@ export function Hero() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2 }}
+                    transition={{ delay: 2.2 }}
                   >
                     <span className="text-chart-4">{"}"}</span>
                     <span className="text-muted-foreground">;</span>

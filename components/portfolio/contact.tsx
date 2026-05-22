@@ -80,7 +80,7 @@ export function Contact() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/ricardosanhueza"
+                  href="https://github.com/k4inos1"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
