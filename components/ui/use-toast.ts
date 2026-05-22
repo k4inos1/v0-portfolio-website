@@ -64,7 +64,7 @@ const addToRemoveQueue = (toastId: string) => {
     toastTimeouts.delete(toastId)
     dispatch({
       type: actionTypes.REMOVE_TOAST,
-      toastId: toastId,
+      toastId,
     })
   }, TOAST_REMOVE_DELAY)
 
@@ -147,7 +147,11 @@ function toast({ ...props }: Toast) {
       type: actionTypes.UPDATE_TOAST,
       toast: { ...props, id },
     })
-  const dismiss = () => dispatch({ type: actionTypes.DISMISS_TOAST, toastId: id })
+  const dismiss = () =>
+    dispatch({
+      type: actionTypes.DISMISS_TOAST,
+      toastId: id,
+    })
 
   dispatch({
     type: actionTypes.ADD_TOAST,
