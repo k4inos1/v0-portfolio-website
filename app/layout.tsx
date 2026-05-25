@@ -4,9 +4,9 @@ import { VisitorTracker } from '@/components/analytics/VisitorTracker'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Full Stack Developer',
-  description: 'Full Stack Developer specializing in building exceptional digital experiences. E-commerce, AI apps, SaaS tools, and more.',
-  generator: 'v0.app',
+  title: 'Ricardo Sanhueza | Full Stack Developer',
+  description: 'Desarrollador Full-Stack y especialista en Software Seguro. Diseño plataformas escalables con foco en ciberseguridad, calidad técnica y resultados medibles.',
+  generator: 'Next.js',
   icons: {
     icon: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0f172a',
+  themeColor: '#0a0e1a',
 }
 
 export default function RootLayout({
@@ -36,8 +36,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased bg-background text-foreground">
+    <html lang="es" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased bg-background text-foreground">
         {children}
         <Analytics />
         <VisitorTracker />
